@@ -16,9 +16,9 @@ export default class Observer{
         this.observer = new IntersectionObserver((entries) => {
             entries.forEach(entry =>{
                 if (entry.isIntersecting){
-                    console.log('in view')
+                    this.onEnter();
                 } else {
-                    console.log('not in view')
+                    this.onLeave();
                 }
             });
         }, options);
@@ -26,4 +26,7 @@ export default class Observer{
 
         this.observer.observe(this.element);
     }
+
+    onEnter() {}
+    onLeave() {}
 }//end tag
