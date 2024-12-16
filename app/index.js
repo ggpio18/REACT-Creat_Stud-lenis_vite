@@ -6,6 +6,7 @@ import Home from './pages/Home';
 class App {
 
     constructor() {
+        document.body.style.opacity = '1';
         this._createLenis();
         this._createHome();
         this._render();
