@@ -17,6 +17,17 @@ export default class TextReveal extends Observer {
     onEnter(){
         gsap.to(this.splitWords.words, {
             y: '0%',
-        })
+            duration: 1.3,
+            stagger: 0.015,
+            ease: 'power3',
+        });
     }
+
+    // test
+    // onLeave() {
+    //     gsap.set(this.splitWords.words, {
+    //         y: '100%',
+    //         ease: 'power3',
+    //     });
+    // }
 }

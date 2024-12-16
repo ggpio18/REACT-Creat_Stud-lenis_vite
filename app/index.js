@@ -2,12 +2,14 @@ import '../styles/index.scss';
 import Lenis from '@studio-freight/lenis';
 // import Observer from './classes/Observer';
 import TextReveal from './animation/TextReveal';
+import Button from './animation/Button';
 
 class App {
 
     constructor() {
         // this._createObserver();
         this._createTextReveals();
+        this._createButtons();
         this._createLenis();
         this._render();
     }
@@ -17,6 +19,15 @@ class App {
         textItems.forEach(text => {
             new TextReveal({
                 element: text,
+            });
+        });
+    }
+
+    _createButtons() {
+        const buttons = [...document.querySelectorAll('[data-animation="button"]')];
+        buttons.forEach((button) => {
+            new Button({
+                element: button,
             });
         });
     }
